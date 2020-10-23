@@ -2,14 +2,14 @@
 
 
 /**
- * check_format - check that the format string is readable
+ * _check_format - check that the format string is readable
  *
  * @format : format string
  *
  * Return: -1 if format is error, 1 if format is correct
  */
 
-int	check_format(const char *format)
+int	_check_format(const char *format)
 {
 	unsigned int	i;
 
@@ -17,7 +17,9 @@ int	check_format(const char *format)
 	while (format[i])
 	{
 		if (format[i] == '%' && !CASE_LIST(format[i + 1]))
+		{
 			return (-1);
+		}
 		i++;
 	}
 	return (1);
@@ -43,13 +45,13 @@ int	_parse(const char *format, ...)
 	i = 0;
 	sum = 0;
 	va_start(mylist, format);
-	if (check_format(format) == -1)
+	if (_check_format(format) == -1)
 		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			gpf =  get_print_func(format[i + 1]);
+			gpf =  _get_print_func(format[i + 1]);
 			if (gpf == NULL)
 			{
 				_putchar(format[i]);

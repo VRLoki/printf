@@ -2,6 +2,7 @@
 
 /**
  * _printf - equivalent to printf function
+ *
  * @format: format string
  *
  * Return: 0
@@ -22,13 +23,9 @@ int	_printf(const char *format, ...)
 	return(sum);
 }
 
-
-
-int main(void)
+int	main(void)
 {
-	int	i;
-
-	_printf("le char = '%%s'\n","s peut etre ?");
-	printf("le char du vrai = '%%%c'\n", 'g');
+	printf("return o = %i\n", printf("%s\n", ""));
+	printf("return n = %i\n", _printf("%s\n", ""));
 	return (0);
 }

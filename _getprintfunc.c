@@ -8,13 +8,13 @@
  * Return: function to perform
  */
 
-int	(*get_print_func(const char s))(va_list)
+int	(*_get_print_func(const char s))(va_list)
 {
 	printfunc_t	pft[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'i', print_numb},
-		{'d', print_numb},
+		{'c', _print_char},
+		{'s', _print_string},
+		{'i', _print_numb},
+		{'d', _print_numb},
 		{'\0', NULL}
 	};
 	int		i;

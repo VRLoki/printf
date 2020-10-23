@@ -1,30 +1,57 @@
 #include "holberton.h"
 
 /**
- * print_number - prints an integer.
+ * _print_number - prints the inputed number
  *
- * @n: the value of the number to print
+ * @n : number to print
  *
- * Return: void
- *
+ * Return: the number of number print.
  */
-void	print_number(int n)
-{
-	unsigned int	nbr;
 
-	if (n < 0)
+int	_print_number(int n)
+{
+	int	k;
+	int	nb;
+	int	count;
+
+	k = 1;
+	count = 0;
+	while (n / k > 9 || n / k < -9)
+		k *= 10;
+
+	while (k > 0)
 	{
-		_putchar('-');
-		nbr = -n;
+		nb = n / k;
+
+		if (nb < 0)
+		{
+			count++;
+			count++;
+			_putchar('-');
+			_putchar('0' - nb);
+			n = -(n - nb * k);
+		}
+		else
+		{
+			count++;
+			_putchar('0' + nb);
+			n = n - nb * k;
+		}
+		k = k / 10;
 	}
-	else
-	{
-		nbr = n;
-	}
-	if (nbr > 9)
-	{
-		n = nbr / 10;
-		print_number(n);
-	}
-	_putchar((nbr % 10) + '0');
+	return (count);
 }
+
+/**
+ * _print_numb - print a number content inside a va_list.
+ *
+ * @mylist : va_list with the number.
+ *
+ * Return: the number of number print.
+ */
+
+int	_print_numb(va_list mylist)
+{
+	return (_print_number(va_arg(mylist, int)));
+}
+
