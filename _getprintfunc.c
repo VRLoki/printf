@@ -13,9 +13,12 @@ int	(*get_print_func(const char s))(va_list)
         printfunc_t	pft[] = {
                 {'c', print_char},
                 {'s', print_string},
+		{'d', print_number},
+		{'i'} print_number},
                 {'\0', NULL}
         };
         int		i;
+
         i = 0;
         while (i < 3)
         {
