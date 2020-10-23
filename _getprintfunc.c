@@ -10,22 +10,22 @@
 
 int	(*get_print_func(const char s))(va_list)
 {
-        printfunc_t	pft[] = {
-                {'c', print_char},
-                {'s', print_string},
-		{'d', print_number},
-		{'i'} print_number},
-                {'\0', NULL}
-        };
-        int		i;
+	printfunc_t	pft[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'i', print_numb},
+		{'d', print_numb},
+		{'\0', NULL}
+	};
+	int		i;
 
-        i = 0;
-        while (i < 3)
-        {
-                if ((pft[i].c) == s)
-                        return (pft[i].f);
-                i++;
-        }
+	i = 0;
+	while ((pft[i].c))
+	{
+		if ((pft[i].c) == s)
+			return (pft[i].f);
+		i++;
+	}
 
-        return (NULL);
+	return (NULL);
 }
