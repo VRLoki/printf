@@ -8,13 +8,17 @@
  */
 int	_printf(const char *format, ...)
 {
-	va_list		toprint;
-	unsigned int	sum;
+	va_list	toprint;
+	int	sum;
 
 	sum = 0;
 	va_start(toprint, format);
 	sum = _parse(format);
 	va_end(toprint);
+	if (sum == -1)
+	{
+		_putstr("Error\n");
+	}
 	return(sum);
 }
 
@@ -24,8 +28,7 @@ int main(void)
 {
 	int	i;
 
-	_printf("je suis un caractere et je vaux '%c' et '%c' voila\n",'m', 'g');
-	_printf("pour test on peut \"%s\" <-- \n", "holberton");
-	printf("%i\n", _printf("%s%c", "res", '\n'));
+	_printf("le char = '%%s'\n","s peut etre ?");
+	printf("le char du vrai = '%%%c'\n", 'g');
 	return (0);
 }

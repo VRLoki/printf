@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%')
+
 /**
  * struct printfunc - Struct printfunc
  *
