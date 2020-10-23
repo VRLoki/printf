@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * get_print_func -  selects the correct function
  *
@@ -6,20 +8,18 @@
  * Return: function to perform
  */
 
-int (*get_print_func(const char *s))(va_list)
+int	(*get_print_func(const char s))(va_list)
 {
-        printfunc_t pft[] = {
-                {"c", print_char},
-                {"s", print_string},
-                {NULL, NULL}
+        printfunc_t	pft[] = {
+                {'c', print_char},
+                {'s', print_string},
+                {'\0', NULL}
         };
-
-        int i;
-
+        int		i;
         i = 0;
         while (i < 3)
         {
-                if ((pft[i].c)[0] == s[0])
+                if ((pft[i].c) == s)
                         return (pft[i].f);
                 i++;
         }

@@ -1,16 +1,26 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdarg.h>
+
+int	_putstr(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	return (i);
+}
 
 int print_char(va_list mylist)
 {
-	putchar(va_arg(mylist, int));
-	return (0);
+	_putchar(va_arg(mylist, int));
+	return (1);
 }
 
 int print_string(va_list mylist)
 {
-	printf("%s", va_arg(mylist, char*));
-	return (0);
+	return (_putstr(va_arg(mylist, char *)));
 }
 

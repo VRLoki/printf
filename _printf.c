@@ -1,7 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdarg.h>
-
 
 /**
  * _printf - equivalent to printf function
@@ -9,26 +6,26 @@
  *
  * Return: 0
  */
-int _printf(const char *format, ...)
+int	_printf(const char *format, ...)
 {
-	va_list toprint;
-	int (*f)(va_list);
+	va_list		toprint;
+	unsigned int	sum;
 
+	sum = 0;
 	va_start(toprint, format);
-	f = get_print_func(format);
-	if (f != NULL)
-		return(f(toprint));
+	sum = _parse(format);
 	va_end(toprint);
-	return(0);
+	return(sum);
 }
 
 
 
 int main(void)
 {
-	_printf("%c",'c');
-	_printf("s", "holberton\n");
-	printf"%%")
-	printf("\n");
+	int	i;
+
+	_printf("je suis un caractere et je vaux '%c' et '%c' voila\n",'m', 'g');
+	_printf("pour test on peut \"%s\" <-- \n", "holberton");
+	printf("%i\n", _printf("%s%c", "res", '\n'));
 	return (0);
 }
