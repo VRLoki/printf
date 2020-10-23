@@ -1,5 +1,14 @@
 #include "holberton.h"
 
+
+/**
+ * check_format - check that the format string is readable
+ *
+ * @format : format string
+ *
+ * Return: -1 if format is error, 1 if format is correct
+ */
+
 int	check_format(const char *format)
 {
 	unsigned int	i;
@@ -8,13 +17,21 @@ int	check_format(const char *format)
 	while (format[i])
 	{
 		if (format[i] == '%' && !CASE_LIST(format[i + 1]))
-		{
 			return (-1);
-		}
 		i++;
 	}
 	return (1);
 }
+
+/**
+ * _parse - parse the fromat string and print
+ *
+ * @format : format string
+ *
+ * Return: -1 if format is error, else nb of printed char
+ */
+
+
 
 int	_parse(const char *format, ...)
 {
@@ -27,9 +44,7 @@ int	_parse(const char *format, ...)
 	sum = 0;
 	va_start(mylist, format);
 	if (check_format(format) == -1)
-	{
 		return (-1);
-	}
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -39,13 +54,9 @@ int	_parse(const char *format, ...)
 			{
 				_putchar(format[i]);
 				if (format[i + 1] == '%')
-				{
 					i++;
-				}	
 				else
-				{
 					return (-1);
-				}
 				sum++;
 			}
 			else
