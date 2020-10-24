@@ -8,9 +8,11 @@
  * Return: 1 (Always)
  */
 
-int	_putchar(char c)
+int	_putchar(char c, char *buff, int *bufflen)
 {
-	write(1, &c, 1);
+	/* write(1, &c, 1); */
+	buff [*bufflen] = c;
+	*bufflen += 1;
 	return (1);
 }
 
@@ -22,9 +24,9 @@ int	_putchar(char c)
  * Return: 1 (Always)
  */
 
-int	_print_char(va_list mylist)
+int	_print_char(va_list mylist, char *buff, int *bufflen)
 {
-	_putchar(va_arg(mylist, int));
+	_putchar(va_arg(mylist, int), buff, bufflen);
 	return (1);
 }
 
@@ -37,8 +39,8 @@ int	_print_char(va_list mylist)
  * Return: 1 (Always)
  */
 
-int	_print_perc(va_list mylist)
+int	_print_perc(va_list mylist, char *buff, int *bufflen)
 {
-	_putchar('%');
+	_putchar('%', buff, bufflen);
 	return (1);
 }

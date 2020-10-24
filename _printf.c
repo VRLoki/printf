@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _printf - equivalent to printf function
  *
@@ -18,14 +17,25 @@ int	_printf(const char *format, ...)
 	va_end(toprint);
 	if (sum == -1)
 	{
-		_putstr("Error\n");
+		printf("Error\n");
 	}
 	return(sum);
 }
 
 int	main(void)
 {
-	printf("return o = %i\n", printf("%s\n", ""));
-	printf("return n = %i\n", _printf("%s\n", ""));
+	_printf("test %c yesorno\n", 'n');
+	_printf("test %s yesyes\n", "nono");
+	_printf("test %%");
+	_printf("test %d number\n", 123454321);
+	_printf("test %i number\n", 234565432);
+
+	printf("return printf = %i\n", printf("test %s yesyes\n", "nono"));
+	printf("return _printf = %i\n", _printf("test %s yesyes\n", "nono"));
+	printf("return printf = %i\n", printf("test %d number\n", 123454321));
+	printf("return _printf = %i\n", _printf("test %d number\n", 123454321));
+
+
+
 	return (0);
 }

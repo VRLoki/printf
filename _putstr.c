@@ -8,20 +8,20 @@
  * Return: the number of characters print.
  */
 
-int     _putstr(char *str)
+int     _putstr(char *str, char *buff, int *bufflen)
 {
 	int    i;
 
 	i = 0;
 	if (str == NULL)
 	{
-		_putstr("(null)");
+		_putstr("(null)", buff, bufflen);
 	}
 	else
 	{
 		while (str[i])
 		{
-			_putchar(str[i]);
+			_putchar(str[i], buff, bufflen);
 			i++;
 		}
 	}
@@ -36,8 +36,7 @@ int     _putstr(char *str)
  * Return: the number of characters print.
  */
 
-int	_print_string(va_list mylist)
+int	_print_string(va_list mylist, char *buff, int *bufflen)
 {
-	return (_putstr(va_arg(mylist, char *)));
+	return (_putstr(va_arg(mylist, char *), buff, bufflen));
 }
-

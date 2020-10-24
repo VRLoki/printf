@@ -8,7 +8,7 @@
  * Return: function to perform
  */
 
-int	(*_get_print_func(const char s))(va_list)
+int	(*_get_print_func(const char s))(va_list, char *, int *)
 {
 	printfunc_t	pft[] = {
 		{'c', _print_char},

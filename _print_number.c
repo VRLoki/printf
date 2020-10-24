@@ -8,7 +8,7 @@
  * Return: the number of number print.
  */
 
-int	_print_number(int n)
+int	_print_number(int n, char *buff, int *bufflen)
 {
 	int	k;
 	int	nb;
@@ -27,14 +27,14 @@ int	_print_number(int n)
 		{
 			count++;
 			count++;
-			_putchar('-');
-			_putchar('0' - nb);
+			_putchar('-', buff, bufflen);
+			_putchar('0' - nb, buff, bufflen);
 			n = -(n - nb * k);
 		}
 		else
 		{
 			count++;
-			_putchar('0' + nb);
+			_putchar('0' + nb, buff, bufflen);
 			n = n - nb * k;
 		}
 		k = k / 10;
@@ -50,8 +50,8 @@ int	_print_number(int n)
  * Return: the number of number print.
  */
 
-int	_print_numb(va_list mylist)
+int	_print_numb(va_list mylist, char *buff, int *bufflen)
 {
-	return (_print_number(va_arg(mylist, int)));
+	return (_print_number(va_arg(mylist, int), buff, bufflen));
 }
 
