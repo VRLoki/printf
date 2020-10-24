@@ -20,6 +20,8 @@ int	_check_format(const char *format)
 		{
 			return (-1);
 		}
+		if (format[i] == '%' && format[i+1] == '%')
+			i++;
 		i++;
 	}
 	return (1);
@@ -50,8 +52,11 @@ int	_parse(const char *format, ...)
 
 	va_start(mylist, format);
 	if (_check_format(format) == -1)
+	{
+		printf("Error CheckF\n");
 		return (-1);
-	while (format[i])
+	}
+		while (format[i])
 	{
 		if (format[i] == '%')
 		{
