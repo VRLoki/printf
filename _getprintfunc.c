@@ -15,12 +15,13 @@ int	(*_get_print_func(const char s))(va_list)
 		{'s', _print_string},
 		{'i', _print_numb},
 		{'d', _print_numb},
+		{'%', _print_perc},
 		{'\0', NULL}
 	};
 	int		i;
 
 	i = 0;
-	while ((pft[i].c))
+	while (pft[i].c)
 	{
 		if ((pft[i].c) == s)
 			return (pft[i].f);

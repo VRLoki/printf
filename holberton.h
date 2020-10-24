@@ -22,13 +22,24 @@ typedef struct printfunc
 	int (*f)(va_list);
 } printfunc_t;
 
-int	_parse(const char *format, ...);
-int	(*_get_print_func(const char s))(va_list);
-int	_print_char(va_list mylist);
-int	_print_string(va_list mylist);
+
+/* _putchar.c */
 int	_putchar(char c);
+int	_print_char(va_list mylist);
+int     _print_perc(va_list mylist)
+
+/* _putstr.c */
 int	_putstr(char *str);
+int	_print_string(va_list mylist);
+
+/* _print_number.c */
 int	_print_number(int n);
 int	_print_numb(va_list mylist);
+
+/* _getprintfunct.c */
+int	(*_get_print_func(const char s))(va_list);
+
+/* _parse.c */
+int	_parse(const char *format, ...);
 
 #endif

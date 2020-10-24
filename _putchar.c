@@ -27,3 +27,18 @@ int	_print_char(va_list mylist)
 	_putchar(va_arg(mylist, int));
 	return (1);
 }
+
+
+/**
+ * _print_perc - print a percent character
+ *
+ * @mylist: va_list, not used
+ *
+ * Return: 1 (Always)
+ */
+
+int	_print_perc(va_list mylist)
+{
+	_putchar('%');
+	return (1);
+}

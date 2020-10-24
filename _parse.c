@@ -55,10 +55,6 @@ int	_parse(const char *format, ...)
 			if (gpf == NULL)
 			{
 				_putchar(format[i]);
-				if (format[i + 1] == '%')
-					i++;
-				else
-					return (-1);
 				sum++;
 			}
 			else
