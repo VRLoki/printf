@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _strlen - return the size of a string.
  *
@@ -21,7 +23,7 @@ size_t	_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strrev(char *str)
+char	*_strrev(char *str)
 {
 	unsigned int	i;
 	size_t		j;
@@ -43,23 +45,29 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
-char	*_convert_base(long int nbr, int base, int cap)
+char	*_convert_base(unsigned int nbr, int base, int cap)
 {
 	char		b16[] = "0123456789abcdef";
 	char		B16[] = "0123456789ABCDEF";
 	char		*result;
 	int		i;
-	long int	n;
-
+	unsigned int	n;
+	int		count;
+	
 	i = 0;
 	n = nbr;
-	if (nbr < 0)
+	while (n > 0)
 	{
-		n *= -1;
-		i++;
-
+		n /= base;
+		count++;
 	}
-	while (n > base)
+	result = (char *)malloc(sizeof(char) * count + 1);
+	if (result == NULL)
+	{
+		return (NULL);
+	}
+	n = nbr;
+	while (n != 0)
 	{
 		if (cap == 1)
 		{
@@ -69,13 +77,7 @@ char	*_convert_base(long int nbr, int base, int cap)
 		{
 			result[i] = b16[n % base];
 		}
-
 		n /= base;
-		i++;
-	}
-	if (nbr < 0)
-	{
-		result[i] = '-';
 		i++;
 	}
 	result[i] = '\0';

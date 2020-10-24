@@ -26,7 +26,7 @@ int	main(void)
 {
 	int	nbr;
 
-	nbr = 0b1110;
-	printf("%x\n", nbr);
+	_printf("convert n = \"%u\"\n", INT_MIN);
+	printf("convert v = \"%u\"\n", INT_MIN);
 	return (0);
 }

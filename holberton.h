@@ -8,8 +8,7 @@
 #include <limits.h>
 #include <string.h>
 
-#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd'
-		|| c == 'b' || c == 'o' || c == 'x' || c == 'X')
+#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd' || c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u')
 
 /**
  * struct printfunc - Struct printfunc
@@ -43,10 +42,14 @@ int	(*_get_print_func(const char s))(va_list, char *, int *);
 /* _parse.c */
 int	_parse(const char *format, ...);
 
-/* _convert_base.c */
+/* _print_base.c */ 
 int	_print_b(va_list mylist, char *buff, int *bufflen);
 int	_print_o(va_list mylist, char *buff, int *bufflen);
+int	_print_u(va_list mylist, char *buff, int *bufflen);
 int	_print_x(va_list mylist, char *buff, int *bufflen);
 int	_print_X(va_list mylist, char *buff, int *bufflen);
+
+/* _convert_base.c */
+char	*_convert_base(unsigned int nbr, int base, int cap);
 
 #endif

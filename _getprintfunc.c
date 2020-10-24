@@ -17,6 +17,7 @@ int	(*_get_print_func(const char s))(va_list, char *, int *)
 		{'d', _print_numb},
 		{'b', _print_b},
 		{'o', _print_o},
+		{'u', _print_u},
 		{'x', _print_x},
 		{'X', _print_X},
 		{'%', _print_perc},
