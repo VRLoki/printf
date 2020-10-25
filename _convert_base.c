@@ -43,7 +43,7 @@ char	*_strrev(char *str)
 		return (NULL);
 	}
 	j = _strlen(str);
-	dest = (char *)malloc(sizeof(char) * j);
+	dest = (char *)malloc(sizeof(char) * j + 1);
 	if (dest == NULL)
 	{
 		return (NULL);
@@ -57,6 +57,7 @@ char	*_strrev(char *str)
 		j--;
 	}
 	dest[i] = '\0';
+	free(str);
 	return (dest);
 }
 
@@ -81,8 +82,8 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 	unsigned int	n;
 	int		count;
 
-	i = 0;
 	n = nbr;
+	count = 0;
 	while (n > 0)
 	{
 		n /= base;
@@ -94,6 +95,7 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 		return (NULL);
 	}
 	n = nbr;
+	i = 0;
 	while (n != 0)
 	{
 		if (cap == 1)
