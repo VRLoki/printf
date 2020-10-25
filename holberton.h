@@ -8,7 +8,9 @@
 #include <limits.h>
 #include <string.h>
 
-#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd' || c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u' || c  == 'r' || c == 'R' || c == 'S')
+#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd'\
+		|| c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u'\
+		|| c  == 'r' || c == 'R' || c == 'S')
 
 /**
  * struct printfunc - Struct printfunc
