@@ -40,11 +40,11 @@ int	_check_format(const char *format)
 int	_parse(const char *format, ...)
 {
 	unsigned int	i;
-	unsigned int	sum;
+	int		sum;
 	va_list		mylist;
 	int		(*gpf)(va_list, char *, int *);
-	char buff[1024];
-	int *bufflen;
+	char		buff[1024];
+	int		*bufflen;
 
 	sum = 0;
 	bufflen = &sum;

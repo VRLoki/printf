@@ -47,6 +47,7 @@ int	_print_char(va_list mylist, char *buff, int *bufflen)
 
 int	_print_perc(va_list mylist, char *buff, int *bufflen)
 {
+	(void)mylist;
 	_putchar('%', buff, bufflen);
 	return (1);
 }
