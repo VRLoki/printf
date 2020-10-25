@@ -35,16 +35,19 @@ size_t	_strlen(char *str)
 char	*_strrev(char *str)
 {
 	unsigned int	i;
-	size_t		j;
+	unsigned int	j;
 	char		c;
 
 	i = 0;
 	if (!str)
 		return (NULL);
-	j = _strlen(str);
+	printf("DDDEEE\n");
+	j = _strlen(str)+1;
+	printf("str = %s, j = %u\n", str, j);
 	j--;
 	while (i < j)
 	{
+		printf("i = %u, j = %u\n", i, j);
 		c = str[i];
 		str[i] = str[j];
 		str[j] = c;

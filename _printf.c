@@ -13,6 +13,7 @@ int	_printf(const char *format, ...)
 
 	sum = 0;
 	va_start(toprint, format);
+	/* printf("Debug\n"); */
 	sum = _parse(format);
 	va_end(toprint);
 	if (sum == -1)
@@ -26,7 +27,11 @@ int	main(void)
 {
 	int	nbr;
 
-	_printf("convert n = \"%u\"\n", INT_MIN);
-	printf("convert v = \"%u\"\n", INT_MIN);
+	_printf("Test1 %s\n", "Reverse1");
+	_printf("Test2 %c\n", 'R');
+	_printf("Test3 %i\n", 2222);
+	_printf("Test4 %r\n", "TESTstring");
+	_printf("Test3 %R\n", "TESTR");
+
 	return (0);
 }

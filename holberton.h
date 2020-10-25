@@ -8,7 +8,7 @@
 #include <limits.h>
 #include <string.h>
 
-#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd' || c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u')
+#define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd' || c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u' || c  == 'r' || c == 'R' || c == 'S')
 
 /**
  * struct printfunc - Struct printfunc
@@ -31,6 +31,13 @@ int     _print_perc(va_list mylist, char *buff, int *bufflen);
 /* _putstr.c */
 int	_putstr(char *str, char *buff, int *bufflen);
 int	_print_string(va_list mylist, char *buff, int *bufflen);
+int	_print_string_r(va_list mylist, char *buff, int *bufflen);
+
+/* _putstr_x.c */
+int     _putstr_S(char *str, char *buff, int *bufflen);
+int	_print_string_R(va_list mylist, char *buff, int *bufflen);
+int	_print_string_S(va_list mylist, char *buff, int *bufflen);
+
 
 /* _print_number.c */
 int	_print_number(int n, char *buff, int *bufflen);
@@ -50,6 +57,8 @@ int	_print_x(va_list mylist, char *buff, int *bufflen);
 int	_print_X(va_list mylist, char *buff, int *bufflen);
 
 /* _convert_base.c */
+size_t  _strlen(char *str);
+char    *_strrev(char *str);
 char	*_convert_base(unsigned int nbr, int base, int cap);
 
 #endif

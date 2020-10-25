@@ -21,6 +21,9 @@ int	(*_get_print_func(const char s))(va_list, char *, int *)
 		{'x', _print_x},
 		{'X', _print_X},
 		{'%', _print_perc},
+		{'r', _print_string_r},
+		{'R', _print_string_R},
+		{'S', _print_string_S},
 		{'\0', NULL}
 	};
 	int		i;
@@ -29,7 +32,9 @@ int	(*_get_print_func(const char s))(va_list, char *, int *)
 	while (pft[i].c)
 	{
 		if ((pft[i].c) == s)
+		{
 			return (pft[i].f);
+		}
 		i++;
 	}
 

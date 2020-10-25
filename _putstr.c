@@ -44,3 +44,21 @@ int	_print_string(va_list mylist, char *buff, int *bufflen)
 {
 	return (_putstr(va_arg(mylist, char *), buff, bufflen));
 }
+
+
+
+
+/**
+ * _print_string_r - print a string content inside a va_list in reverse
+ *
+ * @mylist: va_list with the string.
+ * @buff : buffer
+ * @bufflen : size of the buffer
+ *
+ * Return: the number of characters print.
+ */
+
+int	_print_string_r(va_list mylist, char *buff, int *bufflen)
+{
+	return (_putstr(_strrev(va_arg(mylist, char *)), buff, bufflen));
+}
