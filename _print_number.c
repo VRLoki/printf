@@ -4,6 +4,8 @@
  * _print_number - prints the inputed number
  *
  * @n : number to print
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: the number of number print.
  */
@@ -46,6 +48,8 @@ int	_print_number(int n, char *buff, int *bufflen)
  * _print_numb - print a number content inside a va_list.
  *
  * @mylist : va_list with the number.
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: the number of number print.
  */
@@ -54,4 +58,3 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen)
 {
 	return (_print_number(va_arg(mylist, int), buff, bufflen));
 }
-

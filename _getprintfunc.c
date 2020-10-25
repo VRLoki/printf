@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * get_print_func -  selects the correct function
+ * _get_print_func -  selects the correct function
  *
  * @s : operator passed to the program
  *

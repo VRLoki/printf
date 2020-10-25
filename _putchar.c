@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * _putchar - print a char.
+ * _putchar - add a char to the buffer.
  *
  * @c: the char to print.
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: 1 (Always)
  */
@@ -11,7 +13,7 @@
 int	_putchar(char c, char *buff, int *bufflen)
 {
 	/* write(1, &c, 1); */
-	buff [*bufflen] = c;
+	buff[*bufflen] = c;
 	*bufflen += 1;
 	return (1);
 }
@@ -20,6 +22,8 @@ int	_putchar(char c, char *buff, int *bufflen)
  * _print_char - print a char content inside a va_list.
  *
  * @mylist: va_list with the char.
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: 1 (Always)
  */
@@ -35,6 +39,8 @@ int	_print_char(va_list mylist, char *buff, int *bufflen)
  * _print_perc - print a percent character
  *
  * @mylist: va_list, not used
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: 1 (Always)
  */

@@ -42,7 +42,7 @@ int	(*_get_print_func(const char s))(va_list, char *, int *);
 /* _parse.c */
 int	_parse(const char *format, ...);
 
-/* _print_base.c */ 
+/* _print_base.c */
 int	_print_b(va_list mylist, char *buff, int *bufflen);
 int	_print_o(va_list mylist, char *buff, int *bufflen);
 int	_print_u(va_list mylist, char *buff, int *bufflen);

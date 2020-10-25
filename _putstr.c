@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
- * _putstr - print a string and return the number of characters print.
+ * _putstr - add string to buffer and return the number of characters print.
  *
  * @str: the string.
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: the number of characters print.
  */
@@ -32,6 +34,8 @@ int     _putstr(char *str, char *buff, int *bufflen)
  * _print_string - print a string content inside a va_list.
  *
  * @mylist: va_list with the string.
+ * @buff : buffer
+ * @bufflen : size of the buffer
  *
  * Return: the number of characters print.
  */

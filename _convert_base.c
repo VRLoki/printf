@@ -23,6 +23,15 @@ size_t	_strlen(char *str)
 	return (len);
 }
 
+
+/**
+ * _strrev - reverse a string.
+ *
+ * @str: the string.
+ *
+ * Return: reverse string
+ */
+
 char	*_strrev(char *str)
 {
 	unsigned int	i;
@@ -45,6 +54,18 @@ char	*_strrev(char *str)
 	return (str);
 }
 
+
+
+/**
+ * _convert_base - convert a number into any base
+ *
+ * @nbr: number to be converted
+ * @base: conversion base
+ * @cap: boolean for hexa convert for Capital print
+ *
+ * Return: converted number in string
+ */
+
 char	*_convert_base(unsigned int nbr, int base, int cap)
 {
 	char		b16[] = "0123456789abcdef";
@@ -53,7 +74,7 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 	int		i;
 	unsigned int	n;
 	int		count;
-	
+
 	i = 0;
 	n = nbr;
 	while (n > 0)

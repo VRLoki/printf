@@ -19,7 +19,7 @@ int	_printf(const char *format, ...)
 	{
 		printf("Error2\n");
 	}
-	return(sum);
+	return (sum);
 }
 
 int	main(void)
