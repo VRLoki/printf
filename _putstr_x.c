@@ -14,13 +14,15 @@ char replace(char a)
 {
 	char init[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char final[53] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i;
 
-	int i = 0;
-
+	i = 0;
 	while (i <= 52)
 	{
 		if (init[i] == a)
+		{
 			return (final[i]);
+		}
 		i++;
 	}
 	return (a);
@@ -38,16 +40,24 @@ char replace(char a)
  *
  */
 
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i = 0;
+	int	i;
+	char	*dest;
+	size_t	len;
 
-	while (*(s + i))
+	if (str == NULL)
 	{
-		s[i] = replace(s[i]);
+		return (NULL);
+	}
+	dest = (char *)malloc(sizeof(char) * len);
+	i = 0;
+	while (str[i])
+	{
+		dest[i] = replace(str[i]);
 		i++;
 	}
-	return (s);
+	return (dest);
 }
 
 
