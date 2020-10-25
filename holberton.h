@@ -53,7 +53,7 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen);
 int	(*_get_print_func(const char s))(va_list, char *, int *);
 
 /* _parse.c */
-int	_parse(const char *format, ...);
+int	_parse(const char *format, va_list mylist);
 int	_check_format(const char *format);
 
 /* _print_base.c */

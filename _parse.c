@@ -31,17 +31,17 @@ int	_check_format(const char *format)
  * _parse - parse the fromat string and print
  *
  * @format : format string
+ * @mylist : va_list
  *
  * Return: -1 if format is error, else nb of printed char
  */
 
 
 
-int	_parse(const char *format, ...)
+int	_parse(const char *format, va_list mylist)
 {
 	unsigned int	i;
 	int		sum;
-	va_list		mylist;
 	int		(*gpf)(va_list, char *, int *);
 	char		buff[1024];
 	int		*bufflen;
@@ -50,7 +50,6 @@ int	_parse(const char *format, ...)
 	bufflen = &sum;
 	i = 0;
 
-	va_start(mylist, format);
 	if (_check_format(format) == -1)
 		return (-1);
 

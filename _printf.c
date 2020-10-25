@@ -13,7 +13,7 @@ int	_printf(const char *format, ...)
 
 	sum = 0;
 	va_start(toprint, format);
-	sum = _parse(format);
+	sum = _parse(format, toprint);
 	va_end(toprint);
 	if (sum == -1)
 	{
