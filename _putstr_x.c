@@ -50,7 +50,10 @@ char *rot13(char *str)
 	{
 		return (NULL);
 	}
+	len = _strlen(str);
 	dest = (char *)malloc(sizeof(char) * len);
+	if (dest == NULL)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
@@ -94,7 +97,6 @@ int	_print_string_R(va_list mylist, char *buff, int *bufflen)
 int     _putstr_S(char *str, char *buff, int *bufflen)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	if (str == NULL)
