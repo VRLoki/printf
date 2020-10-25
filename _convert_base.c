@@ -35,26 +35,29 @@ size_t	_strlen(char *str)
 char	*_strrev(char *str)
 {
 	unsigned int	i;
-	unsigned int	j;
-	char		c;
+	int		j;
+	char		*dest;
 
-	i = 0;
-	if (!str)
-		return (NULL);
-	printf("DDDEEE\n");
-	j = _strlen(str)+1;
-	printf("str = %s, j = %u\n", str, j);
-	j--;
-	while (i < j)
+	if (str == NULL)
 	{
-		printf("i = %u, j = %u\n", i, j);
-		c = str[i];
-		str[i] = str[j];
-		str[j] = c;
+		return (NULL);
+	}
+	j = _strlen(str);
+	dest = (char *)malloc(sizeof(char) * j);
+	if (dest == NULL)
+	{
+		return (NULL);
+	}
+	j--;
+	i = 0;
+	while (j >= 0)
+	{
+		dest[i] = str[j];
 		i++;
 		j--;
 	}
-	return (str);
+	dest[i] = '\0';
+	return (dest);
 }
 
 
