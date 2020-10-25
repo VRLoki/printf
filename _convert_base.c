@@ -34,9 +34,9 @@ size_t	_strlen(char *str)
 
 char	*_strrev(char *str)
 {
-	unsigned int	i;
-	int		j;
-	char		*dest;
+	int	i;
+	int	j;
+	char	*dest;
 
 	if (str == NULL)
 	{
@@ -50,7 +50,7 @@ char	*_strrev(char *str)
 	}
 	j--;
 	i = 0;
-	while (j >= 0)
+	while (j > i)
 	{
 		dest[i] = str[j];
 		i++;
