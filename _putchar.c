@@ -12,7 +12,6 @@
 
 int	_putchar(char c, char *buff, int *bufflen)
 {
-	/* write(1, &c, 1); */
 	buff[*bufflen] = c;
 	*bufflen += 1;
 	return (1);

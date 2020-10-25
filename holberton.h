@@ -39,6 +39,8 @@ int	_print_string_r(va_list mylist, char *buff, int *bufflen);
 int     _putstr_S(char *str, char *buff, int *bufflen);
 int	_print_string_R(va_list mylist, char *buff, int *bufflen);
 int	_print_string_S(va_list mylist, char *buff, int *bufflen);
+char	replace(char a);
+char	*rot13(char *str);
 
 
 /* _print_number.c */
@@ -50,6 +52,7 @@ int	(*_get_print_func(const char s))(va_list, char *, int *);
 
 /* _parse.c */
 int	_parse(const char *format, ...);
+int	_check_format(const char *format);
 
 /* _print_base.c */
 int	_print_b(va_list mylist, char *buff, int *bufflen);

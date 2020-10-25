@@ -29,8 +29,6 @@ char replace(char a)
 }
 
 
-
-
 /**
  * *rot13 - encodes a string using rot13
  *
@@ -78,10 +76,6 @@ int	_print_string_R(va_list mylist, char *buff, int *bufflen)
 {
 	return (_putstr(rot13(va_arg(mylist, char *)), buff, bufflen));
 }
-
-
-
-
 
 
 /**
