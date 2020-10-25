@@ -34,7 +34,7 @@ char replace(char a)
 /**
  * *rot13 - encodes a string using rot13
  *
- * @s : input string
+ * @str : input string
  *
  * Return: modified string
  *
