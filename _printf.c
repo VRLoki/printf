@@ -17,7 +17,7 @@ int	_printf(const char *format, ...)
 	va_end(toprint);
 	if (sum == -1)
 	{
-		printf("Error2\n");
+		_printf("Error\n");
 	}
 	return (sum);
 }

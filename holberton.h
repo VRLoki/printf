@@ -24,6 +24,8 @@ typedef struct printfunc
 	int (*f)(va_list, char *, int *);
 } printfunc_t;
 
+/* _printf.c */
+int	_printf(const char *format, ...);
 
 /* _putchar.c */
 int	_putchar(char c, char *buff, int *bufflen);
