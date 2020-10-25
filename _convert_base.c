@@ -57,7 +57,10 @@ char	*_strrev(char *str)
 		j--;
 	}
 	dest[i] = '\0';
-	free(str);
+	if (str[i])
+	{
+		free(str);
+	}
 	return (dest);
 }
 
