@@ -50,7 +50,7 @@ char	*_strrev(char *str)
 	}
 	j--;
 	i = 0;
-	while (j > i)
+	while (j >= 0)
 	{
 		dest[i] = str[j];
 		i++;
