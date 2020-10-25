@@ -93,7 +93,8 @@ int	_print_string_R(va_list mylist, char *buff, int *bufflen)
 
 int     _putstr_S(char *str, char *buff, int *bufflen)
 {
-	int    i;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (str == NULL)
@@ -108,13 +109,18 @@ int     _putstr_S(char *str, char *buff, int *bufflen)
 			{
 				_putchar('\\', buff, bufflen);
 				_putchar('x', buff, bufflen);
+				if (str[i] < 16)
+				{
+					_putchar('0', buff, bufflen);
+				}
+				_putstr(_convert_base(str[i], 16, 1), buff, bufflen);
 			}
 			else
 				_putchar(str[i], buff, bufflen);
 			i++;
 		}
 	}
-	return (i);
+	return (0);
 }
 
 
