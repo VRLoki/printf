@@ -69,7 +69,7 @@ char	*rot13(char *str);
 
 
 /* _print_number.c */
-int	_print_number(int n, char *buff, int *bufflen);
+int	_print_number(long int n, char *buff, int *bufflen);
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _getprintfunct.c */

@@ -10,11 +10,11 @@
  * Return: the number of number print.
  */
 
-int	_print_number(int n, char *buff, int *bufflen)
+int	_print_number(long int n, char *buff, int *bufflen)
 {
-	int	k;
-	int	nb;
-	int	count;
+	int		k;
+	long int	nb;
+	int		count;
 
 	k = 1;
 	count = 0;
@@ -56,6 +56,29 @@ int	_print_number(int n, char *buff, int *bufflen)
  */
 
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
-{
-	return (_print_number(va_arg(mylist, int), buff, bufflen));
+{	
+	long int	nbr;
+	
+	if (pp->plusf == 1 && nbr > 0)
+	{
+		_putchar('+', buff, bufflen);
+	}
+	else if (pp->spacef == 1 && nbr > 0)
+	{
+		_putchar(' ', buff, bufflen);
+	}
+	if (pp->lmod == 1)
+	{
+		nbr = va_arg(mylist, long int);
+	}
+	else if (pp->hmod == 1)
+	{
+		nbr = va_arg(mylist, int);
+		return (_print_number((short)nbr, buff, bufflen));
+	}
+	else
+	{
+		nbr = va_arg(mylist, int);
+	}
+	return (_print_number(nbr, buff, bufflen));
 }
