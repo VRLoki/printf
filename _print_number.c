@@ -56,29 +56,23 @@ int	_print_number(long int n, char *buff, int *bufflen)
  */
 
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
-{	
+{
 	long int	nbr;
-	
-	if (pp->plusf == 1 && nbr > 0)
+
+	nbr = va_arg(mylist, long int);
+	if (pp->lmod == 0 && pp->hmod == 1)
+		nbr = (short)nbr;
+	else if (pp->lmod == 0)
+		nbr = (int)nbr;
+
+	if (pp->plusf == 1 && nbr >= 0)
 	{
 		_putchar('+', buff, bufflen);
 	}
-	else if (pp->spacef == 1 && nbr > 0)
+	else if (pp->spacef == 1 && nbr >= 0)
 	{
 		_putchar(' ', buff, bufflen);
 	}
-	if (pp->lmod == 1)
-	{
-		nbr = va_arg(mylist, long int);
-	}
-	else if (pp->hmod == 1)
-	{
-		nbr = va_arg(mylist, int);
-		return (_print_number((short)nbr, buff, bufflen));
-	}
-	else
-	{
-		nbr = va_arg(mylist, int);
-	}
+
 	return (_print_number(nbr, buff, bufflen));
 }
