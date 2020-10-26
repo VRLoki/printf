@@ -12,17 +12,6 @@
 		|| c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u'\
 		|| c  == 'r' || c == 'R' || c == 'S' || c == 'p')
 
-/**
- * struct printfunc - Struct printfunc
- *
- * @c: The character type
- * @f: The function associated
- */
-typedef struct printfunc
-{
-	char c;
-	int (*f)(va_list, char *, int *);
-} printfunc_t;
 
 
 /**
@@ -45,9 +34,17 @@ typedef struct printparam
 } param;
 
 
-
-
-
+/**
+ * struct printfunc - Struct printfunc
+ *
+ * @c: The character type
+ * @f: The function associated
+ */
+typedef struct printfunc
+{
+	char c;
+	int (*f)(va_list, char *, int *, param *pp);
+} printfunc_t;
 
 
 /* _printf.c */
