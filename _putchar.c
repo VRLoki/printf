@@ -34,6 +34,8 @@ int	_putchar(char c, char *buff, int *bufflen)
 
 int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod == 2)
+		return (-1);
 	_putchar(va_arg(mylist, int), buff, bufflen);
 	return (1);
 }
@@ -52,6 +54,8 @@ int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp)
 
 int	_print_perc(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod == 2)
+		return (-1);
 	(void)mylist;
 	_putchar('%', buff, bufflen);
 	return (1);

@@ -75,6 +75,8 @@ char *rot13(char *str)
 
 int	_print_string_R(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod != 2)
+		return (-1);
 	return (_putstr(rot13(va_arg(mylist, char *)), buff, bufflen));
 }
 
@@ -135,5 +137,8 @@ int     _putstr_S(char *str, char *buff, int *bufflen)
 
 int	_print_string_S(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod != 2)
+		return (-1);
 	return (_putstr_S(va_arg(mylist, char *), buff, bufflen));
+
 }

@@ -137,6 +137,8 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp)
 	unsigned long int nbr;
 	char *dest;
 
+	if (pp->lmod == 2)
+		return (-1);
 	nbr = va_arg(mylist, unsigned long int);
 	if (nbr == 0)
 	{

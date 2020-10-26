@@ -43,6 +43,8 @@ int     _putstr(char *str, char *buff, int *bufflen)
 
 int	_print_string(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod == 2)
+		return (-1);
 	return (_putstr(va_arg(mylist, char *), buff, bufflen));
 }
 
@@ -62,5 +64,7 @@ int	_print_string(va_list mylist, char *buff, int *bufflen, param *pp)
 
 int	_print_string_r(va_list mylist, char *buff, int *bufflen, param *pp)
 {
+	if (pp->lmod == 2)
+		return (-1);
 	return (_putstr(_strrev(va_arg(mylist, char *)), buff, bufflen));
 }
