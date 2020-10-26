@@ -85,6 +85,14 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 	unsigned int	n;
 	int		count;
 
+	if (nbr == 0)
+	{
+		result = (char *)malloc(sizeof(char) * 2);
+		result[0] = '0';
+		result[1] = '\0';
+		return (result);
+	}
+
 	n = nbr;
 	count = 0;
 	while (n > 0)
