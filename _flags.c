@@ -17,7 +17,6 @@ void _initparam(param *pp)
 }
 
 
-#include "holberton.h"
 /**
  * _checkflag1 - populate the parameters
  *
@@ -46,7 +45,6 @@ int _checkflag1(const char * format, int i, param *pp)
 }
 
 
-#include "holberton.h"
 /**
  * _checkmod1 - populate the parameters
  *

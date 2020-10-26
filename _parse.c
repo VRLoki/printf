@@ -42,10 +42,10 @@ int	_parse(const char *format, va_list mylist)
 {
 	unsigned int	i, j;
 	int		sum;
-	int		(*gpf)(va_list, char *, int *);
+	int		(*gpf)(va_list, char *, int *, param *);
 	char		buff[1024];
 	int		*bufflen;
-	param pp;
+	param		pp;
 
 	sum = 0;
 	bufflen = &sum;
@@ -61,14 +61,12 @@ int	_parse(const char *format, va_list mylist)
 			       j++;
 			while (_checkmod1(format, j, &pp))
 			       j++;
-
-			printf("%i - %i - %i - %i - %i\n", pp.plusf, pp.spacef, pp.diesef, pp.lmod, pp.hmod);
 			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
 			else
 			{
-				gpf(mylist, buff, bufflen);
+				gpf(mylist, buff, bufflen, &pp);
 				i = j ;
 			}
 		}
