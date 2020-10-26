@@ -10,7 +10,7 @@
 
 #define CASE_LIST(c) (c == 'c' || c == 's' || c == '%' || c == 'i' || c == 'd'\
 		|| c == 'b' || c == 'o' || c == 'x' || c == 'X' || c == 'u'\
-		|| c  == 'r' || c == 'R' || c == 'S')
+		|| c  == 'r' || c == 'R' || c == 'S' || c == 'p')
 
 /**
  * struct printfunc - Struct printfunc

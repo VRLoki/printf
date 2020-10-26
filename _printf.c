@@ -11,6 +11,8 @@ int	_printf(const char *format, ...)
 	va_list	toprint;
 	int	sum;
 
+	if (format == NULL)
+		return (-1);
 	sum = 0;
 	va_start(toprint, format);
 	sum = _parse(format, toprint);
