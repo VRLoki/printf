@@ -27,11 +27,12 @@ int	_putchar(char c, char *buff, int *bufflen)
  * @mylist: va_list with the char.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: 1 (Always)
  */
 
-int	_print_char(va_list mylist, char *buff, int *bufflen)
+int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	_putchar(va_arg(mylist, int), buff, bufflen);
 	return (1);
@@ -44,11 +45,12 @@ int	_print_char(va_list mylist, char *buff, int *bufflen)
  * @mylist: va_list, not used
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: 1 (Always)
  */
 
-int	_print_perc(va_list mylist, char *buff, int *bufflen)
+int	_print_perc(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	(void)mylist;
 	_putchar('%', buff, bufflen);

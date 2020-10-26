@@ -127,11 +127,12 @@ char	*_convert_base(unsigned long int nbr, int base, int cap)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_p(va_list mylist, char *buff, int *bufflen)
+int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned long int nbr;
 	char *dest;

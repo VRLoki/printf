@@ -50,11 +50,12 @@ int	_print_number(int n, char *buff, int *bufflen)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int	_print_numb(va_list mylist, char *buff, int *bufflen)
+int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	return (_print_number(va_arg(mylist, int), buff, bufflen));
 }

@@ -7,11 +7,12 @@
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_b(va_list mylist, char *buff, int *bufflen)
+int     _print_b(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned int	nbr;
 	char		*dest;
@@ -31,11 +32,12 @@ int     _print_b(va_list mylist, char *buff, int *bufflen)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_o(va_list mylist, char *buff, int *bufflen)
+int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned int	nbr;
 	char		*dest;
@@ -54,11 +56,12 @@ int     _print_o(va_list mylist, char *buff, int *bufflen)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_u(va_list mylist, char *buff, int *bufflen)
+int     _print_u(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned int	nbr;
 	char		*dest;
@@ -77,11 +80,12 @@ int     _print_u(va_list mylist, char *buff, int *bufflen)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_x(va_list mylist, char *buff, int *bufflen)
+int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned int	nbr;
 	char		*dest;
@@ -100,11 +104,12 @@ int     _print_x(va_list mylist, char *buff, int *bufflen)
  * @mylist : va_list with the number.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of number print.
  */
 
-int     _print_X(va_list mylist, char *buff, int *bufflen)
+int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned int	nbr;
 	char		*dest;

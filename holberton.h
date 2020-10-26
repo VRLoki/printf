@@ -55,45 +55,45 @@ int	_printf(const char *format, ...);
 
 /* _putchar.c */
 int	_putchar(char c, char *buff, int *bufflen);
-int	_print_char(va_list mylist, char *buff, int *bufflen);
-int     _print_perc(va_list mylist, char *buff, int *bufflen);
+int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp);
+int     _print_perc(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _putstr.c */
 int	_putstr(char *str, char *buff, int *bufflen);
-int	_print_string(va_list mylist, char *buff, int *bufflen);
-int	_print_string_r(va_list mylist, char *buff, int *bufflen);
+int	_print_string(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_string_r(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _putstr_x.c */
 int     _putstr_S(char *str, char *buff, int *bufflen);
-int	_print_string_R(va_list mylist, char *buff, int *bufflen);
-int	_print_string_S(va_list mylist, char *buff, int *bufflen);
+int	_print_string_R(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_string_S(va_list mylist, char *buff, int *bufflen, param *pp);
 char	replace(char a);
 char	*rot13(char *str);
 
 
 /* _print_number.c */
 int	_print_number(int n, char *buff, int *bufflen);
-int	_print_numb(va_list mylist, char *buff, int *bufflen);
+int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _getprintfunct.c */
-int	(*_get_print_func(const char s))(va_list, char *, int *);
+int	(*_get_print_func(const char s))(va_list, char *, int *, param *pp);
 
 /* _parse.c */
 int	_parse(const char *format, va_list mylist);
 int	_check_format(const char *format);
 
 /* _print_base.c */
-int	_print_b(va_list mylist, char *buff, int *bufflen);
-int	_print_o(va_list mylist, char *buff, int *bufflen);
-int	_print_u(va_list mylist, char *buff, int *bufflen);
-int	_print_x(va_list mylist, char *buff, int *bufflen);
-int	_print_X(va_list mylist, char *buff, int *bufflen);
+int	_print_b(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_o(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_u(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_x(va_list mylist, char *buff, int *bufflen, param *pp);
+int	_print_X(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _convert_base.c */
 size_t  _strlen(char *str);
 char    *_strrev(char *str);
 char	*_convert_base(unsigned long int nbr, int base, int cap);
-int     _print_p(va_list mylist, char *buff, int *bufflen);
+int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _flags.c */
 void _initparam(param *pp);

@@ -127,11 +127,12 @@ int     _putstr_S(char *str, char *buff, int *bufflen)
  * @mylist: va_list with the string.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : structure with flags informations
  *
  * Return: the number of characters print.
  */
 
-int	_print_string_S(va_list mylist, char *buff, int *bufflen)
+int	_print_string_S(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	return (_putstr_S(va_arg(mylist, char *), buff, bufflen));
 }
