@@ -12,7 +12,11 @@
 
 int	_putchar(char c, char *buff, int *bufflen)
 {
-	buff[*bufflen] = c;
+	if (*bufflen % 1024 == 0 && *bufflen != 0)
+	{
+		write(1, buff, 1024);
+	}
+	buff[*bufflen % 1024] = c;
 	*bufflen += 1;
 	return (1);
 }

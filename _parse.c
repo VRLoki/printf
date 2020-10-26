@@ -70,6 +70,6 @@ int	_parse(const char *format, va_list mylist)
 			_putchar(format[i], buff, bufflen);
 		i++;
 	}
-	write(1, &buff, *bufflen);
+	write(1, buff, *bufflen % 1024);
 	return (*bufflen);
 }
