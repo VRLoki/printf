@@ -24,6 +24,27 @@ typedef struct printfunc
 	int (*f)(va_list, char *, int *);
 } printfunc_t;
 
+
+/**
+ * struct printparam - Struct printparam
+ *
+ * @plusf: flag for '+' sign
+ * @spacef: flag for ' ' sign
+ * @diesef : flag for '#' sign
+ */
+typedef struct printparam
+{
+	int plusf;
+	int spacef;
+	int diesef;
+} param;
+
+
+
+
+
+
+
 /* _printf.c */
 int	_printf(const char *format, ...);
 
