@@ -137,6 +137,11 @@ int     _print_p(va_list mylist, char *buff, int *bufflen)
 	char *dest;
 
 	nbr = va_arg(mylist, unsigned long int);
+	if (nbr == 0)
+	{
+		_putstr("(nil)", buff, bufflen);
+		return (0);
+	}
 	dest = _convert_base(nbr, 16, 0);
 	_putchar('0', buff, bufflen);
 	_putchar('x', buff, bufflen);
