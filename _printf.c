@@ -11,7 +11,7 @@ int	_printf(const char *format, ...)
 	va_list	toprint;
 	int	sum;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == 0))
 		return (-1);
 	sum = 0;
 	va_start(toprint, format);
