@@ -59,7 +59,10 @@ int	_parse(const char *format, va_list mylist)
 			j = i + 1;
 			while (_checkflag1(format, j, &pp))
 			       j++;
+			while (_checkmod1(format, j, &pp))
+			       j++;
 
+			printf("%i - %i - %i - %i - %i\n", pp.plusf, pp.spacef, pp.diesef, pp.lmod, pp.hmod);
 			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
