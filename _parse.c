@@ -50,9 +50,6 @@ int	_parse(const char *format, va_list mylist)
 	bufflen = &sum;
 	i = 0;
 
-	if (_check_format(format) == -1)
-		return (-1);
-
 	while (format[i])
 	{
 		if (format[i] == '%')
