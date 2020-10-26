@@ -40,11 +40,12 @@ int	_check_format(const char *format)
 
 int	_parse(const char *format, va_list mylist)
 {
-	unsigned int	i;
+	unsigned int	i, j;
 	int		sum;
 	int		(*gpf)(va_list, char *, int *);
 	char		buff[1024];
 	int		*bufflen;
+	param pp;
 
 	sum = 0;
 	bufflen = &sum;
@@ -54,13 +55,18 @@ int	_parse(const char *format, va_list mylist)
 	{
 		if (format[i] == '%')
 		{
-			gpf =  _get_print_func(format[i + 1]);
+			_initparam(&pp);
+			j = i + 1;
+			while (_checkflag1(format, j, &pp))
+			       j++;
+
+			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
 			else
 			{
 				gpf(mylist, buff, bufflen);
-				i++;
+				i = j ;
 			}
 		}
 		else

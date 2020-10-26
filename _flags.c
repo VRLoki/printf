@@ -17,14 +17,14 @@ void _initparam(param *pp)
 
 #include "holberton.h"
 /**
- * _initparam - put the parameters to 0
+ * _checkflag1 - populate the parameters
  *
  * @pp: print parameters structure
  *
- * Return: Void
+ * Return: 1 if valid, 0 if not
  */
 
-void _checkflagchar(const char * format, int i, param *pp)
+int _checkflag1(const char * format, int i, param *pp)
 {
 	switch (format[i])
 	{
@@ -40,4 +40,3 @@ void _checkflagchar(const char * format, int i, param *pp)
 	}
 	return (0);
 }
-

@@ -90,4 +90,8 @@ char    *_strrev(char *str);
 char	*_convert_base(unsigned long int nbr, int base, int cap);
 int     _print_p(va_list mylist, char *buff, int *bufflen);
 
+/* _flags.c */
+void _initparam(param *pp);
+int _checkflag1(const char * format, int i, param *pp);
+
 #endif
