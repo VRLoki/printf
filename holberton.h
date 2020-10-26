@@ -31,12 +31,17 @@ typedef struct printfunc
  * @plusf: flag for '+' sign
  * @spacef: flag for ' ' sign
  * @diesef : flag for '#' sign
+ *
+ * @lmod: l modifier
+ * @hmod: h modifier
  */
 typedef struct printparam
 {
 	int plusf;
 	int spacef;
 	int diesef;
+	int lmod;
+	int hmod;
 } param;
 
 
@@ -93,5 +98,5 @@ int     _print_p(va_list mylist, char *buff, int *bufflen);
 /* _flags.c */
 void _initparam(param *pp);
 int _checkflag1(const char * format, int i, param *pp);
-
+int _checkmod1(const char * format, int i, param *pp);
 #endif
