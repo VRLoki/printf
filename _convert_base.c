@@ -92,7 +92,6 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 		result[1] = '\0';
 		return (result);
 	}
-
 	n = nbr;
 	count = 0;
 	while (n > 0)
@@ -102,21 +101,15 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 	}
 	result = (char *)malloc(sizeof(char) * count + 1);
 	if (result == NULL)
-	{
 		return (NULL);
-	}
 	n = nbr;
 	i = 0;
 	while (n != 0)
 	{
 		if (cap == 1)
-		{
 			result[i] = B16[n % base];
-		}
 		else
-		{
 			result[i] = b16[n % base];
-		}
 		n /= base;
 		i++;
 	}
