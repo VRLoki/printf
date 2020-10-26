@@ -72,7 +72,7 @@ char *rot13(char *str)
  * Return: the number of characters print.
  */
 
-int	_print_string_R(va_list mylist, char *buff, int *bufflen)
+int	_print_string_R(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	return (_putstr(rot13(va_arg(mylist, char *)), buff, bufflen));
 }
