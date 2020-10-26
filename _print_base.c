@@ -19,10 +19,7 @@ int     _print_b(va_list mylist, char *buff, int *bufflen)
 	nbr = va_arg(mylist, int);
 	dest = _convert_base(nbr, 2, 0);
 	_putstr(dest, buff, bufflen);
-	if (dest && *dest)
-	{
-		free(dest);
-	}
+	free(dest);
 	return (0);
 }
 

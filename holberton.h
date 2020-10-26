@@ -66,6 +66,7 @@ int	_print_X(va_list mylist, char *buff, int *bufflen);
 /* _convert_base.c */
 size_t  _strlen(char *str);
 char    *_strrev(char *str);
-char	*_convert_base(unsigned int nbr, int base, int cap);
+char	*_convert_base(unsigned long int nbr, int base, int cap);
+int     _print_p(va_list mylist, char *buff, int *bufflen);
 
 #endif

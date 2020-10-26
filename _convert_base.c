@@ -76,13 +76,13 @@ char	*_strrev(char *str)
  * Return: converted number in string
  */
 
-char	*_convert_base(unsigned int nbr, int base, int cap)
+char	*_convert_base(unsigned long int nbr, int base, int cap)
 {
 	char		b16[] = "0123456789abcdef";
 	char		B16[] = "0123456789ABCDEF";
 	char		*result;
 	int		i;
-	unsigned int	n;
+	unsigned long int	n;
 	int		count;
 
 	if (nbr == 0)
@@ -115,4 +115,32 @@ char	*_convert_base(unsigned int nbr, int base, int cap)
 	}
 	result[i] = '\0';
 	return (_strrev(result));
+}
+
+
+
+
+
+/**
+ * _print_p - print a pointer address
+ *
+ * @mylist : va_list with the number.
+ * @buff : buffer
+ * @bufflen : size of the buffer
+ *
+ * Return: the number of number print.
+ */
+
+int     _print_p(va_list mylist, char *buff, int *bufflen)
+{
+	unsigned long int nbr;
+	char *dest;
+
+	nbr = va_arg(mylist, unsigned long int);
+	dest = _convert_base(nbr, 16, 0);
+	_putchar('0', buff, bufflen);
+	_putchar('x', buff, bufflen);
+	_putstr(dest, buff, bufflen);
+	free(dest);
+	return (0);
 }

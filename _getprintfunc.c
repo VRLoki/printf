@@ -24,6 +24,7 @@ int	(*_get_print_func(const char s))(va_list, char *, int *)
 		{'r', _print_string_r},
 		{'R', _print_string_R},
 		{'S', _print_string_S},
+		{'p', _print_p},
 		{'\0', NULL}
 	};
 	int		i;
