@@ -68,6 +68,7 @@ char *rot13(char *str)
  * @mylist: va_list with the string.
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @pp : parameters for print
  *
  * Return: the number of characters print.
  */

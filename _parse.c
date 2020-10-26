@@ -58,16 +58,16 @@ int	_parse(const char *format, va_list mylist)
 			_initparam(&pp);
 			j = i + 1;
 			while (_checkflag1(format, j, &pp))
-			       j++;
+				j++;
 			while (_checkmod1(format, j, &pp))
-			       j++;
+				j++;
 			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
 			else
 			{
 				gpf(mylist, buff, bufflen, &pp);
-				i = j ;
+				i = j;
 			}
 		}
 		else

@@ -27,14 +27,14 @@ void _initparam(param *pp)
  * Return: 1 if valid, 0 if not
  */
 
-int _checkflag1(const char * format, int i, param *pp)
+int _checkflag1(const char *format, int i, param *pp)
 {
 	switch (format[i])
 	{
-	case '+' :
+	case '+':
 		pp->plusf = 1;
 		return (1);
-	case ' ' :
+	case ' ':
 		pp->spacef = 1;
 		return (1);
 	case '#':
@@ -55,14 +55,14 @@ int _checkflag1(const char * format, int i, param *pp)
  * Return: 1 if valid, 0 if not
  */
 
-int _checkmod1(const char * format, int i, param *pp)
+int _checkmod1(const char *format, int i, param *pp)
 {
 	switch (format[i])
 	{
-	case 'l' :
+	case 'l':
 		pp->lmod = 1;
 		return (1);
-	case 'h' :
+	case 'h':
 		pp->hmod = 1;
 		return (1);
 	}
