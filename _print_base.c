@@ -44,8 +44,8 @@ int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 	unsigned int	nbr;
 	char		*dest;
 
-	if (pp->lmod == 2)
-		return (-1);
+	if (pp->diesef == 1)
+		_putchar('0', buff, bufflen);
 	nbr = va_arg(mylist, int);
 	dest = _convert_base(nbr, 8, 0);
 	_putstr(dest, buff, bufflen);
@@ -70,8 +70,8 @@ int     _print_u(va_list mylist, char *buff, int *bufflen, param *pp)
 	unsigned int	nbr;
 	char		*dest;
 
-	if (pp->lmod == 2)
-		return (-1);
+	if (pp->diesef == 2)
+		_putchar('0', buff, bufflen);
 	nbr = va_arg(mylist, int);
 	dest = _convert_base(nbr, 10, 0);
 	_putstr(dest, buff, bufflen);
@@ -96,8 +96,11 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 	unsigned int	nbr;
 	char		*dest;
 
-	if (pp->lmod == 2)
-		return (-1);
+	if (pp->diesef == 1)
+	{
+		_putchar('0', buff, bufflen);
+		_putchar('x', buff, bufflen);
+	}
 	nbr = va_arg(mylist, int);
 	dest = _convert_base(nbr, 16, 0);
 	_putstr(dest, buff, bufflen);
@@ -122,8 +125,11 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 	unsigned int	nbr;
 	char		*dest;
 
-	if (pp->lmod == 2)
-		return (-1);
+	if (pp->diesef == 1)
+	{
+		_putchar('0', buff, bufflen);
+		_putchar('X', buff, bufflen);
+	}
 	nbr = va_arg(mylist, int);
 	dest = _convert_base(nbr, 16, 1);
 	_putstr(dest, buff, bufflen);
