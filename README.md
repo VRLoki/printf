@@ -53,6 +53,6 @@ gcc -Wall -pedantic -Werror -Wextra _convert_base.c _flags.c _getprintfunc.c _pa
 
 ## Author
 
-Matt Scetbun *a.k.a* <@matt969696>.
+Matt Scetbun *a.k.a* [@matt969696](https://github.com/matt969696 "The best bro for coding a project <3").
 
-Gautier Chuinard *a.k.a* <@gchuinard>.
+Gautier Chuinard *a.k.a* [@gchuinard](https://github.com/gchuinard "Just me :D")>.
