@@ -60,7 +60,7 @@ int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 		for (i = 0; i < pp->widthm - destlen - pp->diesef; i++)
 			_putchar(fill, buff, bufflen);
 	}
-	if (pp->diesef == 1)
+	if (pp->diesef == 1 && nbr != 0)
 		_putchar('0', buff, bufflen);
 
 	_putstr(dest, buff, bufflen);
