@@ -56,7 +56,7 @@ int	_print_number(long int n, char *buff, int *bufflen)
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	long int	nbr;
-	int i, l, k;
+	int i, l, k, mod;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, long int);
@@ -66,24 +66,26 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 		nbr = (int)nbr;
 
 	l = _numblen(nbr);
-	k = (nbr < 0 ? 1 : 0) && (pp->zerof == 1);
+	k = (nbr < 0 ? 1 : 0);
+	mod = (pp->plusf || pp->spacef) && (nbr >= 0);
 	if (pp->zerof && pp->minusf == 0)
 		fill = '0';
 	if (fill == '0')
 		_putsign(nbr, buff, bufflen, pp);
 
-	if (l + (pp->plusf || pp->spacef) + k < pp->widthm && pp->minusf == 0)
+	if (l + mod + k < pp->widthm && pp->minusf == 0)
 	{
-		for (i = 0; i < pp->widthm - l - (pp->plusf || pp->spacef) - k; i++)
+		for (i = 0; i < pp->widthm - l - mod - k; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	if (fill == ' ')
 		_putsign(nbr, buff, bufflen, pp);
 
 	_print_number(nbr, buff, bufflen);
-	if (l + (pp->plusf || pp->spacef) + 0 < pp->widthm && pp->minusf == 1)
+	k = (nbr < 0 ? 1 : 0) && (pp->zerof == 0);
+	if (l + (pp->plusf || pp->spacef) + k < pp->widthm && pp->minusf == 1)
 	{
-		for (i = 0; i < pp->widthm - l - (pp->plusf || pp->spacef) - 0; i++)
+		for (i = 0; i < pp->widthm - l - (pp->plusf || pp->spacef) - k; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	return (0);
