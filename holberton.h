@@ -105,7 +105,16 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _flags.c */
 void _initparam(param *pp);
+<<<<<<< HEAD
 int _checkflag1(const char *format, int i, param *pp);
 int _checkwidth(const char *format, int i, param *pp);
 int _checkmod1(const char *format, int i, param *pp);
+||||||| merged common ancestors
+int _checkflag1(const char *format, int i, param *pp);
+int _checkmod1(const char *format, int i, param *pp);
+=======
+int _checkflag1(const char * format, int i, param *pp);
+int _checkmod1(const char * format, int i, param *pp);
+>>>>>>> 616cb00e22e25ddd6b08f8ef1eb8f0e5ae2b923b
 #endif
+
