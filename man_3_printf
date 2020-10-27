@@ -42,10 +42,10 @@ A sign (+ or -) should always be placed before a  number  produced  by  a signed
 
 
 .SH Field width
-An optional decimal digit string (with nonzero first digit) specifying a minimum field  width.  If the converted value has fewer characters than the field width, it will be padded with spaces on the left (or right, if the left-adjustment flag has  been  given).  Instead of a decimal digit string one may write "*" or "*m$" (for some decimal integer m) to specify that the field width  is  given  in  the next argument, or in the m-th argument, respectively, which must be of type int. A negative field width is taken as a '-'  flag  followed  by  a  positive  field width.  In no case does a nonexistent or small field width cause truncation of a field; if the result of a conversion is wider than the field width, the field is expanded to contain the conversion result.
+An optional decimal digit string (with nonzero first digit) specifying a minimum field  width.  If the converted value has fewer characters than the field width, it will be padded with spaces on the left (or right, if the left-adjustment flag has  been  given).  Instead of a decimal digit string one may write "*" which must be of type int. A negative field width is taken as a '-' flag followed by a positive field width. In no case does a nonexistent or small field width cause truncation of a field; if the result of a conversion is wider than the field width, the field is expanded to contain the conversion result.
 
 .SH Precision
-An optional precision, in the form of a period ('.') followed by an optional decimal digit string. Instead of a decimal digit string one may  write "*" to specify that the precision is given in the next argument, respectively, which must be of type int. If the precision is given as just '.', the precision is taken to be zero. A negative precision is taken as if the precision were omitted. This gives the minimum number of digits to appear for d, i, b, o, u, x, and X conversions, or the maximum number of characters to be printed from a string for s and S conversions.
+An optional precision, in the form of a period ('.') followed by an optional decimal digit string. Instead of a decimal digit string one may write "*" to specify that the precision is given in the next argument, respectively, which must be of type int. If the precision is given as just '.', the precision is taken to be zero. A negative precision is taken as if the precision were omitted. This gives the minimum number of digits to appear for d, i, b, o, u, x, and X conversions, or the maximum number of characters to be printed from a string for s and S conversions.
 
 .SH Length modifier
 Here, "integer conversion" stands for d, i, b, o, u, x, or X conversion.
@@ -57,7 +57,6 @@ A following integer conversion corresponds to a short int or unsigned short int 
 .TP
 .B l
 (ell) A following integer conversion corresponds to a long int or unsigned long int argument, or a following n conversion corresponds to a pointer to a long int argument.
-.TP
 
 
 .SH Conversion specifiers
@@ -71,7 +70,7 @@ The int argument is written.
 
 .TP
 .B s
-Characters from the array are written up to (but not including) a terminating null byte ('\0'); if a precision is specified, no more than the number specified are written. If a precision is given, no null byte need be present; if the precision is not specified, or is greater than the size of the array, the array must contain a terminating null byte.
+Characters from the array are written up to (but not including) a terminating null byte ('\\0'); if a precision is specified, no more than the number specified are written. If a precision is given, no null byte need be present; if the precision is not specified, or is greater than the size of the array, the array must contain a terminating null byte.
 .br
 
 .TP
