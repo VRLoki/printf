@@ -54,7 +54,6 @@ int	_printf(const char *format, ...);
 int	_putchar(char c, char *buff, int *bufflen);
 int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp);
 int     _print_perc(va_list mylist, char *buff, int *bufflen, param *pp);
-int	_print_pp(char *buff, int *bufflen, param *pp);
 
 /* _putstr.c */
 int	_putstr(char *str, char *buff, int *bufflen);
@@ -94,9 +93,8 @@ char	*_convert_base(unsigned long int nbr, int base, int cap);
 int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _flags.c */
-void	_initparam(param *pp);
-int	_checkflag1(const char *format, int i, param *pp);
-int	_checkmod1(const char *format, int i, param *pp);
-
+void _initparam(param *pp);
+int _checkflag1(const char * format, int i, param *pp);
+int _checkmod1(const char * format, int i, param *pp);
 #endif
 

@@ -1,40 +1,5 @@
 #include "holberton.h"
 
-
-/**
- * _print_pp - print the flags.
- *
- * @buff : buffer
- * @bufflen : size of the buffer
- * @pp : structure with flags informations
- *
- * Return: 1 (Always)
- */
-
-int	_print_pp(char *buff, int *bufflen, param *pp)
-{
-	int	r;
-
-	r = 0;
-	_putchar('%', buff, bufflen);
-	if (pp->diesef == 1)
-	{
-		_putchar('#', buff, bufflen);
-		r = 1;
-	}
-	if (pp->plusf == 1)
-	{
-		_putchar('+', buff, bufflen);
-		r = 1;
-	}
-	else if (pp->spacef)
-	{
-		_putchar(' ', buff, bufflen);
-		r = 1;
-	}
-	return (r);
-}
-
 /**
  * _putchar - add a char to the buffer.
  *
