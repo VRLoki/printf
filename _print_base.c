@@ -43,7 +43,7 @@ int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned long int	nbr;
 	char		*dest;
-	int destlen, i;
+	int destlen, i, mod;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, unsigned long int);
@@ -53,20 +53,22 @@ int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 		nbr = (unsigned int)nbr;
 	dest = _convert_base(nbr, 8, 0);
 	destlen = _strlen(dest);
+	mod = (pp->diesef) && (nbr != 0);
+
 	if (pp->zerof == 1 && pp->minusf == 0)
 		fill = '0';
-	if (destlen + pp->diesef < pp->widthm && pp->minusf == 0)
+	if (destlen + mod < pp->widthm && pp->minusf == 0)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	if (pp->diesef == 1 && nbr != 0)
 		_putchar('0', buff, bufflen);
 
 	_putstr(dest, buff, bufflen);
-	if (destlen + pp->diesef < pp->widthm && pp->minusf == 1)
+	if (destlen + mod < pp->widthm && pp->minusf == 1)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	free(dest);
@@ -132,7 +134,7 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned long int	nbr;
 	char		*dest;
-	int destlen, i;
+	int destlen, i, mod;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, unsigned long int);
@@ -150,9 +152,10 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 		_putchar('0', buff, bufflen);
 		_putchar('x', buff, bufflen);
 	}
-	if (destlen + pp->diesef * 2 < pp->widthm && pp->minusf == 0)
+	mod = 2 * ((pp->diesef) && (nbr != 0));
+	if (destlen + mod < pp->widthm && pp->minusf == 0)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	if (fill == ' ' && pp->diesef == 1 && nbr != 0)
@@ -161,9 +164,9 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 		_putchar('x', buff, bufflen);
 	}
 	_putstr(dest, buff, bufflen);
-	if (destlen + pp->diesef * 2 < pp->widthm && pp->minusf == 1)
+	if (destlen + mod < pp->widthm && pp->minusf == 1)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	free(dest);
@@ -186,7 +189,7 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	unsigned long int	nbr;
 	char		*dest;
-	int destlen, i;
+	int destlen, i, mod;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, unsigned long int);
@@ -202,11 +205,12 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 	if (fill == '0' && pp->diesef == 1 && nbr != 0)
 	{
 		_putchar('0', buff, bufflen);
-		_putchar('x', buff, bufflen);
+		_putchar('X', buff, bufflen);
 	}
-	if (destlen + pp->diesef * 2 < pp->widthm && pp->minusf == 0)
+	mod = 2 * ((pp->diesef) && (nbr != 0));
+	if (destlen + mod < pp->widthm && pp->minusf == 0)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	if (fill == ' ' && pp->diesef == 1 && nbr != 0)
@@ -215,9 +219,9 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 		_putchar('X', buff, bufflen);
 	}
 	_putstr(dest, buff, bufflen);
-	if (destlen + pp->diesef * 2 < pp->widthm && pp->minusf == 1)
+	if (destlen + mod < pp->widthm && pp->minusf == 1)
 	{
-		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
+		for (i = 0; i < pp->widthm - destlen - mod; i++)
 			_putchar(fill, buff, bufflen);
 	}
 	free(dest);
