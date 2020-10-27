@@ -60,24 +60,32 @@ int _checkflag1(const char *format, int i, param *pp)
  * @format : string read to parse
  * @i : character of the string
  * @pp: print parameters structure
+ * @mylist : valist containing all arguments
  *
  * Return: nb character read if valid, 0 if not
  */
 
-int _checkwidth(const char *format, int i, param *pp)
+int _checkwidth(const char *format, int i, param *pp, va_list mylist)
 {
 	int mod;
 	int j = 0;
 
 	mod = 0;
 
-	while (format[i + j] >= '0' && format[i + j] <= '9')
+	if (format[i] == '*')
 	{
-		mod = mod * 10 + (format[i + j] - '0');
+		pp->widthm = va_arg(mylist, int);
 		j++;
 	}
-
-	pp->widthm = mod;
+	else
+	{
+		while (format[i + j] >= '0' && format[i + j] <= '9')
+		{
+			mod = mod * 10 + (format[i + j] - '0');
+			j++;
+		}
+		pp->widthm = mod;
+	}
 	return (j);
 }
 

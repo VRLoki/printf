@@ -59,7 +59,7 @@ int	_parse(const char *format, va_list mylist)
 			j = i + 1;
 			while (_checkflag1(format, j, &pp))
 				j++;
-			j += _checkwidth(format, j, &pp);
+			j += _checkwidth(format, j, &pp, mylist);
 			while (_checkmod1(format, j, &pp))
 				j++;
 
