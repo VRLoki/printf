@@ -152,3 +152,41 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp)
 	free(dest);
 	return (0);
 }
+
+
+
+#include "holberton.h"
+
+/**
+ * _addpreci - add 0 at front if needed
+ *
+ * @str: the string.
+ * @preci : precision arguments
+ *
+ * Return: the modified string
+ */
+
+char *_addpreci(char *str, int preci)
+{
+	int	i, len;
+	char *newstr;
+
+	if (str != NULL)
+	{
+		len = _strlen(str);
+		if (len < preci)
+		{
+			newstr = (char *)malloc(sizeof(char) * preci + 1);
+			if (newstr == NULL)
+				return (NULL);
+			for (i = 0; i < preci - len; i++)
+				newstr[i] = '0';
+			for (i = preci - len; i <= preci; i++)
+				newstr[i] = str[i + len - preci];
+			free(str);
+			return (newstr);
+		}
+		return (str);
+	}
+	return (NULL);
+}

@@ -6,20 +6,30 @@
  * @n : number to print
  * @buff : buffer
  * @bufflen : size of the buffer
+ * @preci : required precision
  *
  * Return: the number of number print.
  */
 
-int	_print_number(long int n, char *buff, int *bufflen)
+int	_print_number(long int n, char *buff, int *bufflen, int preci)
 {
-	int		k;
+	int		i, k;
+	int len, precilen;
 	long int	nb;
 	int		count;
 
 	k = 1;
 	count = 0;
+	len = 1;
 	while (n / k > 9 || n / k < -9)
+	{
 		k *= 10;
+		len++;
+	}
+
+	precilen = _numblen(n, preci);
+	for (i = 0; i < precilen - len; i++)
+		_putchar('0', buff, bufflen);
 
 	while (k > 0)
 	{
@@ -56,7 +66,7 @@ int	_print_number(long int n, char *buff, int *bufflen)
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	long int	nbr;
-	int i, l, k, mod;
+	int i, l, k, mod, size, nbz;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, long int);
@@ -65,10 +75,10 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 	else if (pp->lmod == 0)
 		nbr = (int)nbr;
 
-	l = _numblen(nbr);
+	l = _numblen(nbr, pp->precim);
 	k = (nbr < 0 ? 1 : 0);
 	mod = (pp->plusf || pp->spacef) && (nbr >= 0);
-	if (pp->zerof && pp->minusf == 0)
+	if (pp->zerof && pp->minusf == 0 && pp->precim == 0)
 		fill = '0';
 	if (fill == '0')
 		_putsign(nbr, buff, bufflen, pp);
@@ -81,7 +91,7 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 	if (fill == ' ')
 		_putsign(nbr, buff, bufflen, pp);
 
-	_print_number(nbr, buff, bufflen);
+	_print_number(nbr, buff, bufflen, pp->precim);
 	k = (nbr < 0 ? 1 : 0) && (pp->zerof == 0);
 	if (l + (pp->plusf || pp->spacef) + k < pp->widthm && pp->minusf == 1)
 	{
@@ -96,22 +106,23 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
  * _numblen - computes the length of a numver
  *
  * @nbr : input nuber
+ * @preci : required precision
  *
  * Return: the number of digits
  */
 
-int	_numblen(long int nbr)
+int	_numblen(long int nbr, int preci)
 {
 	int count = 0;
 
 	if (nbr == 0)
-		return (1);
+		return (preci > 1 ? preci : 1);
 	while (nbr != 0)
 	{
 		nbr /= 10;
 		count++;
 	}
-	return (count);
+	return (preci > count ? preci : count);
 }
 
 

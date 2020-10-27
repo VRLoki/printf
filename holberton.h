@@ -24,6 +24,7 @@
  * @zerof : flag for '0' sign
  *
  * @widthm : width modifier
+ * @precim : precision modifier
  *
  * @lmod: l modifier
  * @hmod: h modifier
@@ -37,6 +38,7 @@ typedef struct printparam
 	int zerof;
 
 	int widthm;
+	int precim;
 
 	int lmod;
 	int hmod;
@@ -78,9 +80,9 @@ char	*rot13(char *str);
 
 
 /* _print_number.c */
-int	_print_number(long int n, char *buff, int *bufflen);
+int	_print_number(long int n, char *buff, int *bufflen, int preci);
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp);
-int     _numblen(long int nbr);
+int     _numblen(long int nbr, int preci);
 void _putsign(long int nbr, char *buff, int *bufflen, param *pp);
 
 /* _getprintfunct.c */
@@ -102,10 +104,12 @@ size_t  _strlen(char *str);
 char    *_strrev(char *str);
 char	*_convert_base(unsigned long int nbr, int base, int cap);
 int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
+char *_addpreci(char *str, int preci);
 
 /* _flags.c */
 void _initparam(param *pp);
 int _checkflag1(const char *format, int i, param *pp);
 int _checkwidth(const char *format, int i, param *pp, va_list mylist);
+int _checkprecision(const char *format, int i, param *pp, va_list mylist);
 int _checkmod1(const char *format, int i, param *pp);
 #endif

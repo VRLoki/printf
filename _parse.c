@@ -60,6 +60,7 @@ int	_parse(const char *format, va_list mylist)
 			while (_checkflag1(format, j, &pp))
 				j++;
 			j += _checkwidth(format, j, &pp, mylist);
+			j += _checkprecision(format, j, &pp, mylist);
 			while (_checkmod1(format, j, &pp))
 				j++;
 
