@@ -6,11 +6,11 @@ The objectif was to code a part of printf and add a few more features, in C.
 
 Our \_printf handle :
 1. Flag characters
-	- #
+	- \#
 	- 0
-	- -
+	- \-
 	- ' '
-	- +
+	- \+
 2. Field width
 3. Precision
 4. Length modifier
@@ -37,8 +37,10 @@ Everything was done remotely.
 
 ## How to use it
 
-Clone this repository
+Clone this repository.
+
 \#include "holberton.h"
+
 You can compile with:
 ```
 gcc -Wall -pedantic -Werror -Wextra \*.c
@@ -51,5 +53,5 @@ gcc -Wall -pedantic -Werror -Wextra _convert_base.c _flags.c _getprintfunc.c _pa
 
 ## Author
 
-Matt Scetbun *a.k.a* @matt969696
-Gautier Chuinard *a.k.a* @gchuinard
+Matt Scetbun *a.k.a* @matt969696.
+Gautier Chuinard *a.k.a* @gchuinard.
