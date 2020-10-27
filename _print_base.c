@@ -145,7 +145,7 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 	if (pp->zerof == 1 && pp->minusf == 0)
 		fill = '0';
 
-	if (fill == '0' && pp->diesef == 1)
+	if (fill == '0' && pp->diesef == 1 && nbr != 0)
 	{
 		_putchar('0', buff, bufflen);
 		_putchar('x', buff, bufflen);
@@ -155,7 +155,7 @@ int     _print_x(va_list mylist, char *buff, int *bufflen, param *pp)
 		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
 			_putchar(fill, buff, bufflen);
 	}
-	if (fill == ' ' && pp->diesef == 1)
+	if (fill == ' ' && pp->diesef == 1 && nbr != 0)
 	{
 		_putchar('0', buff, bufflen);
 		_putchar('x', buff, bufflen);
@@ -199,7 +199,7 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 	if (pp->zerof == 1 && pp->minusf == 0)
 		fill = '0';
 
-	if (fill == '0' && pp->diesef == 1)
+	if (fill == '0' && pp->diesef == 1 && nbr != 0)
 	{
 		_putchar('0', buff, bufflen);
 		_putchar('x', buff, bufflen);
@@ -209,7 +209,7 @@ int     _print_X(va_list mylist, char *buff, int *bufflen, param *pp)
 		for (i = 0; i < pp->widthm - destlen - pp->diesef * 2; i++)
 			_putchar(fill, buff, bufflen);
 	}
-	if (fill == ' ' && pp->diesef == 1)
+	if (fill == ' ' && pp->diesef == 1 && nbr != 0)
 	{
 		_putchar('0', buff, bufflen);
 		_putchar('X', buff, bufflen);
