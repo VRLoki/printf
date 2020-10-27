@@ -12,6 +12,9 @@ void _initparam(param *pp)
 	pp->plusf = 0;
 	pp->spacef = 0;
 	pp->diesef = 0;
+	pp->minusf = 0;
+	pp->zerof = 0;
+	pp->widthm = 0;
 	pp->lmod = 0;
 	pp->hmod = 0;
 }
@@ -40,9 +43,46 @@ int _checkflag1(const char *format, int i, param *pp)
 	case '#':
 		pp->diesef = 1;
 		return (1);
+	case '-':
+		pp->minusf = 1;
+		return (1);
+	case '0':
+		pp->zerof = 1;
+		return (1);
 	}
 	return (0);
 }
+
+
+/**
+ * _checkwidth - populate the width parameter
+ *
+ * @format : string read to parse
+ * @i : character of the string
+ * @pp: print parameters structure
+ *
+ * Return: nb character read if valid, 0 if not
+ */
+
+int _checkwidth(const char *format, int i, param *pp)
+{
+	int mod;
+	int j = 0;
+
+	mod = 0;
+
+	while (format[i + j] >= '0' && format[i + j] <= '9')
+	{
+		mod = mod * 10 + (format[i + j] - '0');
+		j++;
+	}
+
+	pp->widthm = mod;
+	return (j);
+}
+
+
+
 
 
 /**

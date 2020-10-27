@@ -20,6 +20,10 @@
  * @plusf: flag for '+' sign
  * @spacef: flag for ' ' sign
  * @diesef : flag for '#' sign
+ * @minusf : flag for '-' sign
+ * @zerof : flag for '0' sign
+ *
+ * @widthm : width modifier
  *
  * @lmod: l modifier
  * @hmod: h modifier
@@ -29,6 +33,11 @@ typedef struct printparam
 	int plusf;
 	int spacef;
 	int diesef;
+	int minusf;
+	int zerof;
+
+	int widthm;
+
 	int lmod;
 	int hmod;
 } param;
@@ -71,6 +80,8 @@ char	*rot13(char *str);
 /* _print_number.c */
 int	_print_number(long int n, char *buff, int *bufflen);
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp);
+int     _numblen(long int nbr);
+void _putsign(long int nbr, char *buff, int *bufflen, param *pp);
 
 /* _getprintfunct.c */
 int	(*_get_print_func(const char s))(va_list, char *, int *, param *pp);
@@ -95,5 +106,6 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
 /* _flags.c */
 void _initparam(param *pp);
 int _checkflag1(const char *format, int i, param *pp);
+int _checkwidth(const char *format, int i, param *pp);
 int _checkmod1(const char *format, int i, param *pp);
 #endif

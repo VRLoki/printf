@@ -28,8 +28,6 @@ int	_print_number(long int n, char *buff, int *bufflen)
 		if (nb < 0)
 		{
 			count++;
-			count++;
-			_putchar('-', buff, bufflen);
 			_putchar('0' - nb, buff, bufflen);
 			n = -(n - nb * k);
 		}
@@ -52,12 +50,14 @@ int	_print_number(long int n, char *buff, int *bufflen)
  * @bufflen : size of the buffer
  * @pp : structure with flags informations
  *
- * Return: the number of number print.
+ * Return: 0
  */
 
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	long int	nbr;
+	int i, l, k;
+	char fill = ' ';
 
 	nbr = va_arg(mylist, long int);
 	if (pp->lmod == 0 && pp->hmod == 1)
@@ -65,14 +65,73 @@ int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 	else if (pp->lmod == 0)
 		nbr = (int)nbr;
 
-	if (pp->plusf == 1 && nbr >= 0)
-	{
-		_putchar('+', buff, bufflen);
-	}
-	else if (pp->spacef == 1 && nbr >= 0)
-	{
-		_putchar(' ', buff, bufflen);
-	}
+	l = _numblen(nbr);
+	k = (nbr < 0 ? 1 : 0) && (pp->zerof == 1);
+	if (pp->zerof && pp->minusf == 0)
+		fill = '0';
+	if (fill == '0')
+		_putsign(nbr, buff, bufflen, pp);
 
-	return (_print_number(nbr, buff, bufflen));
+	if (l + (pp->plusf || pp->spacef) + k < pp->widthm && pp->minusf == 0)
+	{
+		for (i = 0; i < pp->widthm - l - (pp->plusf || pp->spacef) - k; i++)
+			_putchar(fill, buff, bufflen);
+	}
+	if (fill == ' ')
+		_putsign(nbr, buff, bufflen, pp);
+
+	_print_number(nbr, buff, bufflen);
+	if (l + (pp->plusf || pp->spacef) + 0 < pp->widthm && pp->minusf == 1)
+	{
+		for (i = 0; i < pp->widthm - l - (pp->plusf || pp->spacef) - 0; i++)
+			_putchar(fill, buff, bufflen);
+	}
+	return (0);
+}
+
+
+/**
+ * _numblen - computes the length of a numver
+ *
+ * @nbr : input nuber
+ *
+ * Return: the number of digits
+ */
+
+int	_numblen(long int nbr)
+{
+	int count = 0;
+
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
+	{
+		nbr /= 10;
+		count++;
+	}
+	return (count);
+}
+
+
+
+
+/**
+ * _putsign - print an extra sign
+ *
+ * @nbr : number
+ * @buff : buffer
+ * @bufflen : size of the buffer
+ * @pp : structure with flags informations
+ *
+ * Return: 0
+ */
+
+void _putsign(long int nbr, char *buff, int *bufflen, param *pp)
+{
+	if (pp->plusf == 1 && nbr >= 0)
+		_putchar('+', buff, bufflen);
+	else if (pp->spacef == 1 && nbr >= 0)
+		_putchar(' ', buff, bufflen);
+	else if (nbr < 0)
+		_putchar('-', buff, bufflen);
 }

@@ -59,8 +59,10 @@ int	_parse(const char *format, va_list mylist)
 			j = i + 1;
 			while (_checkflag1(format, j, &pp))
 				j++;
+			j += _checkwidth(format, j, &pp);
 			while (_checkmod1(format, j, &pp))
 				j++;
+
 			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
