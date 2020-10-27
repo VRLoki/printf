@@ -65,6 +65,8 @@ int	_parse(const char *format, va_list mylist)
 				j++;
 
 			gpf =  _get_print_func(format[j]);
+			if (format[j] == '\0')
+				break;
 			if (gpf == NULL)
 				_putchar(format[i], buff, bufflen);
 			else
