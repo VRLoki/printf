@@ -171,6 +171,7 @@ char *_addpreci(char *str, int preci)
 	int	i, len;
 	char *newstr;
 
+
 	if (str != NULL)
 	{
 		len = _strlen(str);

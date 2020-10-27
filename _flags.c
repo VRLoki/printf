@@ -16,6 +16,7 @@ void _initparam(param *pp)
 	pp->zerof = 0;
 	pp->widthm = 0;
 	pp->precim = 0;
+	pp->precon = 0;
 	pp->lmod = 0;
 	pp->hmod = 0;
 }
@@ -111,7 +112,7 @@ int _checkprecision(const char *format, int i, param *pp, va_list mylist)
 	mod = 0;
 	if (format[i] != '.')
 		return (0);
-
+	pp->precon = 1;
 	j++;
 	if (format[i + j] == '*')
 	{

@@ -46,7 +46,11 @@ int	_print_string(va_list mylist, char *buff, int *bufflen, param *pp)
 	int i, len;
 	char *str;
 
-	str = va_arg(mylist, char *);
+	if (pp->precon > 0)
+		str = _strncopy(va_arg(mylist, char *), pp->precim);
+	else
+		str = va_arg(mylist, char *);
+
 	len = _strlen(str);
 
 	if (pp->minusf == 0)

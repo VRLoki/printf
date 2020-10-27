@@ -25,6 +25,7 @@
  *
  * @widthm : width modifier
  * @precim : precision modifier
+ * @precon : is precision enabled
  *
  * @lmod: l modifier
  * @hmod: h modifier
@@ -39,6 +40,7 @@ typedef struct printparam
 
 	int widthm;
 	int precim;
+	int precon;
 
 	int lmod;
 	int hmod;
@@ -65,6 +67,7 @@ int	_printf(const char *format, ...);
 int	_putchar(char c, char *buff, int *bufflen);
 int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp);
 int     _print_perc(va_list mylist, char *buff, int *bufflen, param *pp);
+char    *_strncopy(char *str, int n);
 
 /* _putstr.c */
 int	_putstr(char *str, char *buff, int *bufflen);

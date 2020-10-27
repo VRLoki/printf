@@ -71,3 +71,29 @@ int	_print_perc(va_list mylist, char *buff, int *bufflen, param *pp)
 	_putchar('%', buff, bufflen);
 	return (1);
 }
+
+
+/**
+ * _strncopy - copy the n first character of a string
+ *
+ * @str: string to copy
+ * @n : number of characters
+ *
+ * Return: copied string
+ */
+
+char *_strncopy(char *str, int n)
+{
+	int i, len, newlen;
+	char *newstr;
+
+	len = _strlen(str);
+	newlen = (n < len ? n : len);
+	newstr = (char *)malloc(sizeof(char) * (newlen + 1));
+
+	for (i = 0; i < newlen; i++)
+		newstr[i] = str[i];
+	newstr[i] = '\0';
+
+	return (newstr);
+}
