@@ -54,4 +54,5 @@ gcc -Wall -pedantic -Werror -Wextra _convert_base.c _flags.c _getprintfunc.c _pa
 ## Author
 
 Matt Scetbun *a.k.a* @matt969696.
+
 Gautier Chuinard *a.k.a* @gchuinard.
