@@ -32,6 +32,7 @@ If you want more details on our printf you can check the man: man ./man\_3\_prin
 ## Conditions of developpemtent
 
 This \_printf has been code from the 23/10/2020 to 27/10/2020 by 2 wonderful people.
+
 Everything was done remotely.
 
 
