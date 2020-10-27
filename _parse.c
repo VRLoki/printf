@@ -50,7 +50,6 @@ int	_parse(const char *format, va_list mylist)
 	sum = 0;
 	bufflen = &sum;
 	i = 0;
-
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -63,7 +62,11 @@ int	_parse(const char *format, va_list mylist)
 				j++;
 			gpf =  _get_print_func(format[j]);
 			if (gpf == NULL)
+			{
+				if (_print_pp(buff, bufflen, &pp))
+					i += (j - i);
 				_putchar(format[i], buff, bufflen);
+			}
 			else
 			{
 				gpf(mylist, buff, bufflen, &pp);
