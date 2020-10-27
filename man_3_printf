@@ -115,7 +115,7 @@ printf(3)
 
 
 .SH BUGS
-Not too many at the moment
+- Problem with precision = 0 and number = 0
 .br
 
 
