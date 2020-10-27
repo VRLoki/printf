@@ -13,10 +13,12 @@
 
 int	_print_number(long int n, char *buff, int *bufflen, int preci)
 {
-	int		i, k;
+	int		i;
+	long int	k;
 	int len, precilen;
 	long int	nb;
 	int		count;
+
 
 	k = 1;
 	count = 0;
