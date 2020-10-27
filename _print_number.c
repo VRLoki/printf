@@ -66,7 +66,7 @@ int	_print_number(long int n, char *buff, int *bufflen, int preci)
 int	_print_numb(va_list mylist, char *buff, int *bufflen, param *pp)
 {
 	long int	nbr;
-	int i, l, k, mod, size, nbz;
+	int i, l, k, mod;
 	char fill = ' ';
 
 	nbr = va_arg(mylist, long int);

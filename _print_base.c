@@ -51,7 +51,6 @@ int     _print_o(va_list mylist, char *buff, int *bufflen, param *pp)
 		nbr = (unsigned short)nbr;
 	else if (pp->lmod == 0)
 		nbr = (unsigned int)nbr;
-	printf("preci %i\n", pp->precim);
 	dest = _addpreci(_convert_base(nbr, 8, 0), pp->precim);
 	destlen = _strlen(dest);
 	mod = (pp->diesef) && (nbr != 0);
