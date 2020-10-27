@@ -94,7 +94,7 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp);
 
 /* _flags.c */
 void _initparam(param *pp);
-int _checkflag1(const char * format, int i, param *pp);
-int _checkmod1(const char * format, int i, param *pp);
+int _checkflag1(const char *format, int i, param *pp);
+int _checkmod1(const char *format, int i, param *pp);
 #endif
 
