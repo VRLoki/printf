@@ -38,14 +38,29 @@ int     _putstr(char *str, char *buff, int *bufflen)
  * @bufflen : size of the buffer
  * @pp : structure with flags informations
  *
- * Return: the number of characters print.
+ * Return: 1 (Always)
  */
 
 int	_print_string(va_list mylist, char *buff, int *bufflen, param *pp)
 {
-	if (pp->lmod == 2)
-		return (-1);
-	return (_putstr(va_arg(mylist, char *), buff, bufflen));
+	int i, len;
+	char *str;
+
+	str = va_arg(mylist, char *);
+	len = _strlen(str);
+
+	if (pp->minusf == 0)
+	{
+		for (i = 0; i < pp->widthm - len; i++)
+			_putchar(' ', buff, bufflen);
+	}
+	_putstr(str, buff, bufflen);
+	if (pp->minusf == 1)
+	{
+		for (i = 0; i < pp->widthm - len; i++)
+			_putchar(' ', buff, bufflen);
+	}
+	return (1);
 }
 
 

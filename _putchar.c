@@ -34,9 +34,20 @@ int	_putchar(char c, char *buff, int *bufflen)
 
 int	_print_char(va_list mylist, char *buff, int *bufflen, param *pp)
 {
-	if (pp->lmod == 2)
-		return (-1);
+	int i;
+
+	if (pp->minusf == 0)
+	{
+		for (i = 0; i < pp->widthm - 1; i++)
+			_putchar(' ', buff, bufflen);
+	}
 	_putchar(va_arg(mylist, int), buff, bufflen);
+	if (pp->minusf == 1)
+	{
+		for (i = 0; i < pp->widthm - 1; i++)
+			_putchar(' ', buff, bufflen);
+	}
+
 	return (1);
 }
 
