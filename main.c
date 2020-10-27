@@ -11,12 +11,261 @@ int main(void)
 	char longstr[2000];
 	int i;
 	char *str = NULL;
+	int *ptr;
+
+	ptr = &i;
 
 	for (i = 0; i < 1999 ; i++)
 		longstr[i] = 67 + (i % 10);
 	longstr[i] = '\0';
+	i = -1000;
 
-	len = _printf(0);
+	len = _printf("%i\n", i);
+	len2 = printf("%i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%010i\n", i);
+	len2 = printf("%010i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%0+10i\n", i);
+	len2 = printf("%0+10i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%+010i\n", i);
+	len2 = printf("%+010i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%+10i\n", i);
+	len2 = printf("%+10i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("% -010i\n", i);
+	len2 = printf("% -010i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%+10i\n", i);
+	len2 = printf("%+10i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("% +10i\n", i);
+	len2 = printf("% +10i\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+
+
+
+	len = _printf("%x\n", i);
+	len2 = printf("%x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%010x\n", i);
+	len2 = printf("%010x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%#010x\n", i);
+	len2 = printf("%#010x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%0+10x\n", i);
+	len2 = printf("%0+10x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%+10x\n", i);
+	len2 = printf("%+10x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("% -010x\n", i);
+	len2 = printf("% -010x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%+10x\n", i);
+	len2 = printf("%+10x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("% +10x\n", i);
+	len2 = printf("% +10x\n", i);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+
+
+/*	len = _printf("%50o\n", INT_MAX);
+	len2 = printf("%50o\n", INT_MAX);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%50s\n", "test");
+	len2 = printf("%50s\n", "test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%5i\n", 1234567);
+	len2 = printf("%5i\n", 1234567);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%5s\n", "this is a test");
+	len2 = printf("%5s\n", "this is a test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%-50o\n", INT_MAX);
+	len2 = printf("%-50o\n", INT_MAX);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%-50s\n", "test");
+	len2 = printf("%-50s\n", "test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%-5i\n", 1234567);
+	len2 = printf("%-5i\n", 1234567);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%-5s\n", "this is a test");
+	len2 = printf("%-5s\n", "this is a test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+
+	len = _printf("%050o\n", INT_MAX);
+	len2 = printf("%050o\n", INT_MAX);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%050s\n", "test");
+	len2 = printf("%050s\n", "test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%015i\n", 1234567);
+	len2 = printf("%015i\n", 1234567);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%05s\n", "this is a test");
+	len2 = printf("%05s\n", "this is a test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%0-50o\n", INT_MAX);
+	len2 = printf("%0-50o\n", INT_MAX);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%0-50s\n", "test");
+	len2 = printf("%0-50s\n", "test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%0-5i\n", 1234567);
+	len2 = printf("%0-5i\n", 1234567);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%0-5s\n", "this is a test");
+	len2 = printf("%0-5s\n", "this is a test");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+*/
+
+
+/*	len = _printf("%q+i\n", 1000);
+	len2 = printf("%q+i\n", 1000);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%+li\n", 1000);
+	len2 = printf("%+li\n", 1000);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%li\n", 1000);
+	len2 = printf("%hi\n", 1000);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%+# +hli  \n", 1000);
+	len2 = printf("%+# +hli  \n", 1000);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+
+	len = _printf("%+# +hli %lh+# s %p \n", 1000, "string", ptr);
+	len2 = printf("%+# +hli %lh+# s %p \n", 1000, "string", ptr);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+*/
+
+
+/*	len = _printf("%p\n", NULL);
+	len2 = printf("%p\n", NULL);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+*/
+
+
+//	len = _printf("%s%s\n", 0, 1);
+//	len2 = printf("%s%s\n", 0, 1);
+//	printf("Len _printf = %i\n", len);
+//	printf("len printf = %i\n", len2);
+
+
+/*	len = _printf("%y\n");
+	len2 = printf("%y\n");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+	len = _printf("%y\n");
+	len2 = printf("%y\n");
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+
+
+	len = _printf("%j%s%jf\n", 0, 1);
+	len2 = printf("%j%s%jf\n", 0, 1);
+	printf("Len _printf = %i\n", len);
+	printf("len printf = %i\n", len2);
+*/
+
+
+
+/*	len = _printf(0);
 	len2 = printf(0);
 	printf("Len _printf = %i\n", len);
 	printf("len printf = %i\n", len2);
@@ -40,7 +289,7 @@ int main(void)
 	len2 = printf("%c\n", str);
 	printf("Len _printf = %i\n", len);
 	printf("len printf = %i\n", len2);
-
+*/
 
 
 //	len = _printf("%s\n", longstr);
