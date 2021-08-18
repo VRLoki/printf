@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _putstr - add string to buffer and return the number of characters print.

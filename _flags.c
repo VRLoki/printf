@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _initparam - put the parameters to 0
  *

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _strlen - return the size of a string.
@@ -155,7 +155,7 @@ int     _print_p(va_list mylist, char *buff, int *bufflen, param *pp)
 
 
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _addpreci - add 0 at front if needed
